@@ -1,13 +1,6 @@
 const Supplier = require('../models/Supplier')
 const { response200, response404 } = require('./helper')
 
-// function response404(a) {
-//   a.status(404).json({ message: 'Not Found' })
-// }
-// function response200(a, b) {
-//   a.status(200).json(b)
-// }
-
 function index(req, res) {
   Supplier
     .find()

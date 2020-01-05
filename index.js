@@ -2,10 +2,12 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const { dbURI, port } = require('./config/environment')
+const logger = require('./lib/logger')
 const router = require('./config/router')
-// const bodyParser = require('body-parser')
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log('Mongo connected'))
+
+app.use(logger)
 
 app.use('/api', router)
 

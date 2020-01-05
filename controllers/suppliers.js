@@ -1,15 +1,15 @@
 const Supplier = require('../models/Supplier')
 const { response200, response404 } = require('./helper')
 
-function index(req, res) {
+function indexRoute(req, res) {
   Supplier
     .find()
-    .populate('products')
+    .populate({ path: 'products', select: 'name supplier' })
     .then(suppliers => response200(res, suppliers))
     .catch(() => response404(res))
 }
 
-function show(req, res) {
+function showRoute(req, res) {
   Supplier
     .findById(req.params.id)
     .populate('products')
@@ -21,6 +21,6 @@ function show(req, res) {
 }
 
 module.exports = {
-  index,
-  show
+  index: indexRoute,
+  show: showRoute
 }

@@ -13,11 +13,11 @@ Seed the DB with the sample data with the folowing command:
 ```
 $ npm run seed
 ```
-Run the backend with the following command:
+Run the back-end with the following command:
 ```
 $ npm run serve:back
 ```
-Run the frontend with the following command:
+Run the front-end with the following command:
 ```
 $ npm run serve:front
 ```
